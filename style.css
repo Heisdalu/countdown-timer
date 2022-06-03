@@ -44,9 +44,13 @@ body {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
   justify-content: center;
   align-items: baseline;
+}
+
+
+#countdown--container > * + *{
+  margin-left: 0.6rem;
 }
 
 .countdown--box {
@@ -114,9 +118,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
 }
 
+footer > * + *{
+  margin-left: 1rem;
+}
 .icon {
   margin-top: 70px;
 }
@@ -144,7 +150,11 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.485);
+}
+
+.modal > * + *{
+  margin-top: 1rem;
 }
 
 .modal_bg{
@@ -205,6 +215,10 @@ footer {
   margin:0  auto;
   font-size: 0.8rem;
   display: none;
+}
+
+.model-box{
+  color: #ffffff;
 }
 
 

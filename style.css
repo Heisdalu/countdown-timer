@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --box-backgroundColor: hsl(237, 18%, 59%);
+  --soft-red: hsl(345, 95%, 68%);
+  --desaturated-blue: hsl(236, 21%, 26%);
+  --dark-blue: hsl(235, 16%, 14%);
+  --dark: hsl(234, 17%, 12%);
+  --white-color: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--dark-blue);
+  user-select: none;
+}
+
+#main-container {
+  /* filter: blur(2px); */
+  position: relative;
+  height: 100vh;
+  background: url(./images/bg-stars.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#header-text {
+  transform: translateY(-50px);
+  text-align: center;
+  letter-spacing: 5px;
+  color: var(--white-color);
+  line-height: 1.5rem;
+}
+
+#countdown--container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.countdown--box {
+  /* margin: 1rem 5px; */
+  /* margin: 1rem 5px; */
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.5rem;
+  perspective: 500px;
+  perspective-origin: 57% -108%;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.front-flip,
+.bottom-flip {
+  border-radius: 9px;
+  background-color: var(--desaturated-blue);
+  height: 50%;
+}
+
+.front-flip {
+  transform: rotateX(20deg);
+  transform-origin: top;
+  border-bottom: 1px solid solid;
+  box-shadow: 0px 8px 6px rgba(0, 0, 0, 0.607);
+}
+
+.bottom-flip {
+  box-shadow: 0px 8px 3px rgba(0, 0, 0, 0.607);
+  transform: rotateX(350deg) translateY(2px);
+  transform-origin: top;
+}
+
+.value {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  /* font-size: 2.3rem; */
+  font-weight: 900;
+  color: var(--soft-red);
+  transform: rotateX(20deg);
+}
+
+.local-time {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.5rem;
+  letter-spacing: 2px;
+  color: var(--box-backgroundColor);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 150px;
+  width: 100%;
+  background: url(./images/pattern-hills.svg);
+  background-repeat: no-repeat;
+  background-position: 85% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  margin-top: 70px;
+}
+
+.icon:hover path {
+  fill: var(--soft-red);
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+}
+
+.modal {
+  border-radius: 10px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  background-color: hsl(236, 21%, 26%);
+  height: 70vh;
+  width: 300px;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal_bg{
+  position: fixed;
+  height: 100vh;
+  width: 500px;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.58);
+  /* opacity: 0.3; */
+}
+
+.modal2 {
+  border-radius: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translate(100%, 20%);
+  background-color: hsl(236, 21%, 26%);
+  height: 70vh;
+  width: 300px;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 800ms ease-in-out;
+}
+
+.input {
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}
+
+
+#submit {
+  margin: 0.5rem 0;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+#submit:active {
+  background-color: white;
+  color: black;
+}
+
+#validate-msg {
+  font-weight: 900;
+  background-color: white;
+  border-radius: 5px;
+  padding: 3px;
+  color: red;
+  margin:0  auto;
+  font-size: 0.8rem;
+  display: none;
+}
+
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@media screen and (min-width: 500px) {
+  .modal {
+    width: 500px;
+  }
+
+  .model-box {
+    display: flex;
+  }
+
+  .countdown--box {
+    height: 4.6rem;
+    width: 4.6rem;
+  }
+
+  .front-flip,
+  .bottom-flip {
+    border-radius: 12px;
+  }
+
+  .bottom-flip {
+    transform: rotateX(350deg) translateY(7px);
+  }
+
+  .value {
+    font-size: 2.3rem;
+  }
+}
